@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF6F0;
+    color: #2D2526;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Subtle elegant frosted glass */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(235, 218, 222, 0.65);
+}
+
+.vanilla-card {
+  background: #FFFDF9;
+  border: 1px solid #EFE4D6;
+}
+
+.rose-badge {
+  background: #FDF0F3;
+  color: #B83A5A;
+  border: 1px solid #F6D0DA;
+}
+
+/* Print Styles for pristine CV printing */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #111111 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .page-break {
+    page-break-after: always;
+  }
+  .vanilla-card, .glass-panel {
+    border: 1px solid #E5E7EB !important;
+    background: #FFFFFF !important;
+    box-shadow: none !important;
+  }
+}
